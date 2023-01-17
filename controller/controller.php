@@ -21,19 +21,23 @@ class controller
 		$totalPeminjaman = $this->model->sumPeminjaman();
 		$totalPenerbit = $this->model->sumPenerbit();
 		$totalPengarang = $this->model->sumPengarang();
+		
 
 		include "view/view.php";
 	}
 
 
-	function delete($id)
+	function delete($kodebuku)
 	{
-		$delete = $this->model->deletePemesanan($id);
+		$delete = $this->model->deleteBuku($kodebuku);
 		header("location:index.php");
 	}
 
 	function viewInsert()
 	{
+		$idPenerbit = $this->model->selectIdPenerbit();
+		$idPengarang = $this->model->selectIdPengarang();
+		$idKatalog = $this->model->selectIdKatalog();
 		include "view/view_add.php";
 	}
 
@@ -62,18 +66,26 @@ class controller
 	function insert()
 	{
 
-		$nama = $_POST['nama'];
-		$no_hp = $_POST['no_hp'];
-		$tujuan = $_POST['tujuan'];
-		$tanggal = $_POST['tanggal'];
-		$insert = $this->model->insertPemesanan($nama, $no_hp, $tujuan, $tanggal);
-		header("location:index.php");
+		$kodebuku = $_POST['kodebuku'];
+		$namabuku = $_POST['judulbuku'];
+		$tahun = $_POST['tahun'];
+		$idpenerbit = $_POST['idpenerbit'];
+		$idpengarang = $_POST['idpengarang'];
+		$idkatalog = $_POST['idkatalog'];
+		$quantity = $_POST['quantity'];
+		$hargapinjam = $_POST['harga'];
+
+		$insert = $this->model->insertBuku($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam);
+		echo "<script> location.replace('index.php'); </script>";
 	}
 
 
-	function viewEdit($id)
+	function viewEdit($kodebuku)
 	{
-		$data = $this->model->selectPemesanan($id);
+		$idPenerbit = $this->model->selectIdPenerbit();
+		$idPengarang = $this->model->selectIdPengarang();
+		$idKatalog = $this->model->selectIdKatalog();
+		$data = $this->model->selectBuku($kodebuku);
 		$row = $this->model->fetch($data);
 		include "view/view_edit.php";
 	}
@@ -81,13 +93,16 @@ class controller
 
 	function update()
 	{
-		$id = $_POST['id'];
-		$nama = $_POST['nama'];
-		$no_hp = $_POST['no_hp'];
-		$tujuan = $_POST['tujuan'];
-		$tanggal = $_POST['tanggal'];
+		$kodebuku = $_POST['kodebuku'];
+		$namabuku = $_POST['judulbuku'];
+		$tahun = $_POST['tahun'];
+		$idpenerbit = $_POST['idpenerbit'];
+		$idpengarang = $_POST['idpengarang'];
+		$idkatalog = $_POST['idkatalog'];
+		$quantity = $_POST['quantity'];
+		$hargapinjam = $_POST['harga'];
 		
-		$update = $this->model->updatePemesanan($id, $nama, $no_hp, $tujuan, $tanggal);
+		$update = $this->model->updateBuku($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam);
 		echo "<script> location.replace('index.php'); </script>";
 	}
 
