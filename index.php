@@ -7,11 +7,11 @@
 	
 	
 	if(isset($_GET['e'])){ 
-		$id = $_GET['e'];
-		$main->viewEdit($id);
+		$kodebuku = $_GET['e'];
+		$main->viewEdit($kodebuku);
 	}else if(isset($_GET['d'])){ 
-		$id = $_GET['d'];
-		$main->delete($id);
+		$kodebuku = $_GET['d'];
+		$main->delete($kodebuku);
 	}else if(isset($_GET['i'])){
 		$main->viewInsert(); 
 	}else if(isset($_GET['p'])){
