@@ -37,8 +37,8 @@
 		}
 		
 		
-		function selectPemesanan($id){
-			$query = "SELECT * FROM pemesanan where id_pemesanan='$id'";
+		function selectBuku($kodebuku){
+			$query = "SELECT * FROM buku where isbn='$kodebuku'";
 			return $this->execute($query);
 		}
 
@@ -67,23 +67,39 @@
 			$query = "SELECT count(id_pengarang) FROM pengarang";
 			return $this->execute($query);
 		}
+
 		
+		function selectIdPenerbit(){
+			$query = "SELECT id_penerbit FROM penerbit";
+			return $this->execute($query);
+		}
+
+		function selectIdPengarang(){
+			$query = "SELECT id_pengarang FROM pengarang";
+			return $this->execute($query);
+		}
+
 		
-		function deletePemesanan($id){
-			$query = "DELETE FROM pemesanan WHERE id_pemesanan ='$id'";
+		function selectIdKatalog(){
+			$query = "SELECT id_katalog FROM katalog";
+			return $this->execute($query);
+		}
+		
+		function deleteBuku($kodebuku){
+			$query = "DELETE FROM buku WHERE isbn ='$kodebuku'";
 			return $this->execute($query);
 		}
 		
 		
-		function insertPemesanan($nama_pemesan, $no_hp, $tujuan, $Tanggal){
-			$query = "INSERT INTO pemesanan values( NULL, '$nama_pemesan', '$no_hp', '$tujuan', '$Tanggal')";
+		function insertBuku($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam){
+			$query = "INSERT INTO buku values( '$kodebuku', '$namabuku', '$tahun', '$idpenerbit', '$idpengarang', '$idkatalog', '$quantity', '$hargapinjam')";
 			
 			return $this->execute($query);
 		}
 
 
-		function updatePemesanan($id_pemesenanan, $nama_pemesan, $no_hp, $tujuan, $Tanggal) {
-			$query = "UPDATE pemesanan SET id_pemesanan='$id_pemesenanan', nama_pemesan='$nama_pemesan', no_hp='$no_hp', tujuan='$tujuan', Tanggal='$Tanggal' WHERE id_pemesanan = '$id_pemesenanan'";
+		function updateBuku($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam) {
+			$query = "UPDATE buku SET isbn='$kodebuku', judul='$namabuku', tahun='$tahun', id_penerbit='$idpenerbit', id_pengarang='$idpengarang', id_katalog='$idkatalog', qty_stok='$quantity', harga_pinjam='$hargapinjam' WHERE isbn = '$kodebuku'";
 			
 			return $this->execute($query);
 		}
