@@ -1,0 +1,187 @@
+
+.judul {
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(108, 110, 113, 0.2);
+    color: #099b9b;
+    
+    
+}
+
+.judul-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2.5rem;
+}
+
+
+.title-second {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    
+    margin: 1rem;
+    width: 10rem;
+    height: 10rem;
+    background-color: #099b9b;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+
+}
+
+.card-total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn {
+    background-color: #099b9b;
+    color: aliceblue;
+    width: 100px;
+    height: 30px;
+    border-radius: 16px;
+    border: none;
+}
+
+
+.btn-edit {
+    background-color: #ffef00;
+    color: #13171ad4;
+    width: 100px;
+    height: 30px;
+    border-radius: 16px;
+    border: none;
+    margin: 2px;
+}
+
+
+.btn-hapus {
+    background-color: #ff1e00;
+    color: #ffffffd4;
+    width: 100px;
+    height: 30px;
+    border-radius: 16px;
+    border: none;
+    margin: 2px;
+}
+
+.btn-tambah {
+    /* margin-top: 4rem; */
+    background-color: #4451f9;
+    color: #fbfbfbd4;
+    width: 100px;
+    height: 30px;
+    border-radius: 16px;
+    border: none;
+}
+
+
+.container-table {
+    margin-top: 1rem;
+    width: 100%;
+    min-height: 100vh;
+   
+
+}
+
+.table {
+    padding: 1px;
+    width: 90%;
+    min-height: 100vh;
+    margin: auto;
+    /* margin: 4rem 5rem 4rem 5rem; */
+    background-color: #099b9b;
+}
+
+.table-title .row {
+   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+}
+
+.table-title .row .col {
+    background-color: #ff1e00;
+    margin: 1px !important;
+    
+}
+
+.col-1 {
+    background-color: #051c3e !important;
+    width: 8rem !important;
+    margin: 1px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.col-2 {
+    background-color: #051c3e !important;
+    width: 12rem !important;
+    margin: 1px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.col-3 {
+    background-color: #051c3e !important;
+    width: 18rem !important;
+    margin: 1px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.col-4 {
+    background-color: #051c3e !important;
+    width: 24rem !important;
+    margin: 1px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+.table-title  .content-table{
+    display: flex;
+    flex-direction: column;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    color: aliceblue;
+}
