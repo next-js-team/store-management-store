@@ -97,8 +97,8 @@
 							$row[7]
 							</td>
 							<td class='flex items-center px-6 py-4 space-x-3'>
-								<a href='#' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
-								<a href='#' class='font-medium text-red-600 dark:text-red-500 hover:underline'>Remove</a>
+								<a href='index.php?e=$row[0]' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
+								<a href='index.php?d=$row[0]' onClick=\"return confirm('Hapus Data?')\" class='font-medium text-red-600 dark:text-red-500 hover:underline'>Remove</a>
 							</td>
 						</tr>
 					
