@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Perpustakaan Management</title>
+	<title>Store Management</title>
 
 	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
 
@@ -28,7 +28,7 @@
 
 		<div class="w-full backdrop-blur-sm">
 			<div class="relative z-1 h-16 mx-auto px-5 max-w-7xl flex items-center justify-between text-white">
-				<a class="text-2xl hover:text-cyan-400 transition-colors" href="">Perpustakaan Management</a>
+				<a class="text-2xl hover:text-cyan-400 transition-colors" href="">Store Management</a>
 
 				<ul class="flex items-center gap-5">
 					<li><a class="hover:text-cyan-400 transition-colors" href='index.php'>Home</a></li>
