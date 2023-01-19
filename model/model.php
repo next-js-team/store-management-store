@@ -69,10 +69,15 @@
 		// }
 
 		
-		// function selectIdPenerbit(){
-		// 	$query = "SELECT id_penerbit FROM penerbit";
-		// 	return $this->execute($query);
-		// }
+		function selectIdSupplier(){
+			$query = "SELECT id_supplier FROM supplier";
+			return $this->execute($query);
+		}
+
+		function selectIdCategory(){
+			$query = "SELECT id_category FROM category";
+			return $this->execute($query);
+		}
 
 		// function selectIdPengarang(){
 		// 	$query = "SELECT id_pengarang FROM pengarang";
