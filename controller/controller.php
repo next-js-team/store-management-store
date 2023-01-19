@@ -35,15 +35,15 @@ class controller
 
 	function viewInsert()
 	{
-		// $idPenerbit = $this->model->selectIdPenerbit();
-		// $idPengarang = $this->model->selectIdPengarang();
+		$idSupplier = $this->model->selectIdSupplier();
+		$idCategory = $this->model->selectIdCategory();
 		// $idKatalog = $this->model->selectIdKatalog();
 		include "view/view_add.php";
 	}
 
 	function viewPeminjaman()
 	{
-		$data = $this->model->selectProducts();
+		// $data = $this->model->selectProducts();
 		include "view/view_peminjaman.php";
 	}
 

@@ -32,10 +32,10 @@
 
 				<ul class="flex items-center gap-5">
 					<li><a class="hover:text-cyan-400 transition-colors" href='index.php'>Home</a></li>
-					<li><a class="hover:text-cyan-400 transition-colors" href='index.php?p=peminjaman'>Peminjaman</a></li>
+					<!-- <li><a class="hover:text-cyan-400 transition-colors" href='index.php?p=peminjaman'>Peminjaman</a></li>
 					<li><a class="hover:text-cyan-400 transition-colors" href='index.php?a=anggota'>Anggota</a></li>
 					<li><a class="hover:text-cyan-400 transition-colors" href='index.php?t=penerbit'>Penerbit</a></li>
-					<li><a class="hover:text-cyan-400 transition-colors" href='index.php?g=pengarang'>Pengarang</a></li>
+					<li><a class="hover:text-cyan-400 transition-colors" href='index.php?g=pengarang'>Pengarang</a></li> -->
 				</ul>
 			</div>
 		</div>
@@ -55,19 +55,22 @@
 				<tr>
 
 					<th scope="col" class="px-6 py-3">
-						Kode Buku
+						Id Products
 					</th>
 					<th scope="col" class="px-6 py-3">
-						Nama Buku
+						Nama Products
 					</th>
 					<th scope="col" class="px-6 py-3">
-						Tahun
+						Id Supplier
+					</th>
+					<th scope="col" class="px-6 py-3">
+						price
 					</th>
 					<th scope="col" class="px-6 py-3">
 						Quantity
 					</th>
 					<th scope="col" class="px-6 py-3">
-						Harga Pinjam
+						Id Category
 					</th>
 
 					<th scope="col" class="px-6 py-3">
@@ -91,10 +94,13 @@
 							$row[2]
 							</td>
 							<td class='px-6 py-4'>
-							$row[6]
+							$row[3]
 							</td>
 							<td class='px-6 py-4'>
-							$row[7]
+							$row[4]
+							</td>
+							<td class='px-6 py-4'>
+							$row[5]
 							</td>
 							<td class='flex items-center px-6 py-4 space-x-3'>
 								<a href='index.php?e=$row[0]' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
