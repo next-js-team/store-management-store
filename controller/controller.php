@@ -16,50 +16,50 @@ class controller
 	function index()
 	{
 		$data = $this->model->selectAll();
-		$totalBuku = $this->model->sumBuku();
-		$totalAnggota =  $this->model->sumAnggota();
-		$totalPeminjaman = $this->model->sumPeminjaman();
-		$totalPenerbit = $this->model->sumPenerbit();
-		$totalPengarang = $this->model->sumPengarang();
+		// $totalBuku = $this->model->sumBuku();
+		// $totalAnggota =  $this->model->sumAnggota();
+		// $totalPeminjaman = $this->model->sumPeminjaman();
+		// $totalPenerbit = $this->model->sumPenerbit();
+		// $totalPengarang = $this->model->sumPengarang();
 		
 
 		include "view/view.php";
 	}
 
 
-	function delete($kodebuku)
+	function delete($kodeproducts)
 	{
-		$delete = $this->model->deleteBuku($kodebuku);
+		$delete = $this->model->deleteProducts($kodeproducts);
 		header("location:index.php");
 	}
 
 	function viewInsert()
 	{
-		$idPenerbit = $this->model->selectIdPenerbit();
-		$idPengarang = $this->model->selectIdPengarang();
-		$idKatalog = $this->model->selectIdKatalog();
+		// $idPenerbit = $this->model->selectIdPenerbit();
+		// $idPengarang = $this->model->selectIdPengarang();
+		// $idKatalog = $this->model->selectIdKatalog();
 		include "view/view_add.php";
 	}
 
 	function viewPeminjaman()
 	{
-		$data = $this->model->selectPeminjaman();
+		$data = $this->model->selectProducts();
 		include "view/view_peminjaman.php";
 	}
 
 	function viewAnggota()
 	{
-		$data = $this->model->selectAnggota();
+		// $data = $this->model->selectAnggota();
 		include "view/view_anggota.php";
 	}
 	function viewPenerbit()
 	{
-		$data = $this->model->selectPenerbit();
+		// $data = $this->model->selectPenerbit();
 		include "view/view_penerbit.php";
 	}
 	function viewPengarang()
 	{
-		$data = $this->model->selectPengarang();
+		// $data = $this->model->selectPengarang();
 		include "view/view_pengarang.php";
 	}
 
@@ -75,18 +75,18 @@ class controller
 		$quantity = $_POST['quantity'];
 		$hargapinjam = $_POST['harga'];
 
-		$insert = $this->model->insertBuku($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam);
+		$insert = $this->model->insertProducts($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam);
 		echo "<script> location.replace('index.php'); </script>";
 	}
 
 
 	function viewEdit($kodebuku)
 	{
-		$idPenerbit = $this->model->selectIdPenerbit();
-		$idPengarang = $this->model->selectIdPengarang();
-		$idKatalog = $this->model->selectIdKatalog();
-		$data = $this->model->selectBuku($kodebuku);
-		$row = $this->model->fetch($data);
+		// $idPenerbit = $this->model->selectIdPenerbit();
+		// $idPengarang = $this->model->selectIdPengarang();
+		// $idKatalog = $this->model->selectIdKatalog();
+		// $data = $this->model->selectBuku($kodebuku);
+		// $row = $this->model->fetch($data);
 		include "view/view_edit.php";
 	}
 
@@ -102,7 +102,7 @@ class controller
 		$quantity = $_POST['quantity'];
 		$hargapinjam = $_POST['harga'];
 		
-		$update = $this->model->updateBuku($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam);
+		$update = $this->model->updateProducts($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam);
 		echo "<script> location.replace('index.php'); </script>";
 	}
 

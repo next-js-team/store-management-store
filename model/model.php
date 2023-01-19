@@ -2,7 +2,7 @@
 	class model{
 		
 		function __construct(){
-			$this->connect = mysqli_connect("localhost", "root","","perpustakaan-management");
+			$this->connect = mysqli_connect("localhost", "root","","store-manajemen");
 		}
 		
 		
@@ -12,94 +12,94 @@
 		
 		
 		function selectAll(){
-			$query = "SELECT * FROM buku";
+			$query = "SELECT * FROM products";
 			return $this->execute($query);
 		}
 
-		function selectAnggota(){
-			$query = "SELECT * FROM anggota";
+		// function selectAnggota(){
+		// 	$query = "SELECT * FROM anggota";
+		// 	return $this->execute($query);
+		// }
+
+		// function selectPenerbit(){
+		// 	$query = "SELECT * FROM penerbit";
+		// 	return $this->execute($query);
+		// }
+
+		// function selectPengarang(){
+		// 	$query = "SELECT * FROM pengarang";
+		// 	return $this->execute($query);
+		// }
+
+		// function selectPeminjaman(){
+		// 	$query = "SELECT * FROM peminjaman";
+		// 	return $this->execute($query);
+		// }
+		
+		
+		function selectProducts($kodeproduct){
+			$query = "SELECT * FROM products where id_product='$kodeproduct'";
 			return $this->execute($query);
 		}
 
-		function selectPenerbit(){
-			$query = "SELECT * FROM penerbit";
-			return $this->execute($query);
-		}
 
-		function selectPengarang(){
-			$query = "SELECT * FROM pengarang";
-			return $this->execute($query);
-		}
+		// function sumBuku(){
+		// 	$query = "SELECT SUM(qty_stok) FROM buku";
+		// 	return $this->execute($query);
+		// }
 
-		function selectPeminjaman(){
-			$query = "SELECT * FROM peminjaman";
+		// function sumAnggota(){
+		// 	$query = "SELECT count(id_anggota) FROM anggota";
+		// 	return $this->execute($query);
+		// }
+
+		// function sumPeminjaman(){
+		// 	$query = "SELECT count(id_pinjam) FROM peminjaman";
+		// 	return $this->execute($query);
+		// }
+
+		// function sumPenerbit(){
+		// 	$query = "SELECT count(id_penerbit) FROM penerbit";
+		// 	return $this->execute($query);
+		// }
+
+		// function sumPengarang(){
+		// 	$query = "SELECT count(id_pengarang) FROM pengarang";
+		// 	return $this->execute($query);
+		// }
+
+		
+		// function selectIdPenerbit(){
+		// 	$query = "SELECT id_penerbit FROM penerbit";
+		// 	return $this->execute($query);
+		// }
+
+		// function selectIdPengarang(){
+		// 	$query = "SELECT id_pengarang FROM pengarang";
+		// 	return $this->execute($query);
+		// }
+
+		
+		// function selectIdKatalog(){
+		// 	$query = "SELECT id_katalog FROM katalog";
+		// 	return $this->execute($query);
+		// }
+		
+		function deleteProducts($kodeproduct){
+			$query = "DELETE FROM products WHERE id_product ='$kodeproduct'";
 			return $this->execute($query);
 		}
 		
 		
-		function selectBuku($kodebuku){
-			$query = "SELECT * FROM buku where isbn='$kodebuku'";
-			return $this->execute($query);
-		}
-
-
-		function sumBuku(){
-			$query = "SELECT SUM(qty_stok) FROM buku";
-			return $this->execute($query);
-		}
-
-		function sumAnggota(){
-			$query = "SELECT count(id_anggota) FROM anggota";
-			return $this->execute($query);
-		}
-
-		function sumPeminjaman(){
-			$query = "SELECT count(id_pinjam) FROM peminjaman";
-			return $this->execute($query);
-		}
-
-		function sumPenerbit(){
-			$query = "SELECT count(id_penerbit) FROM penerbit";
-			return $this->execute($query);
-		}
-
-		function sumPengarang(){
-			$query = "SELECT count(id_pengarang) FROM pengarang";
-			return $this->execute($query);
-		}
-
-		
-		function selectIdPenerbit(){
-			$query = "SELECT id_penerbit FROM penerbit";
-			return $this->execute($query);
-		}
-
-		function selectIdPengarang(){
-			$query = "SELECT id_pengarang FROM pengarang";
-			return $this->execute($query);
-		}
-
-		
-		function selectIdKatalog(){
-			$query = "SELECT id_katalog FROM katalog";
-			return $this->execute($query);
-		}
-		
-		function deleteBuku($kodebuku){
-			$query = "DELETE FROM buku WHERE isbn ='$kodebuku'";
-			return $this->execute($query);
-		}
-		
-		
-		function insertBuku($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam){
-			$query = "INSERT INTO buku values( '$kodebuku', '$namabuku', '$tahun', '$idpenerbit', '$idpengarang', '$idkatalog', '$quantity', '$hargapinjam')";
+		function insertProducts($id_product, $nama_product, $id_supplier, $price, $quantity, $id_category){
+			$query = "INSERT INTO products values( '$id_product', '$nama_product', '$id_supplier', '$price', '$quantity', '$id_category')";
 			
 			return $this->execute($query);
 		}
 
 
-		function updateBuku($kodebuku, $namabuku, $tahun, $idpenerbit, $idpengarang, $idkatalog, $quantity, $hargapinjam) {
-			$query = "UPDATE buku SET isbn='$kodebuku', judul='$namabuku', tahun='$tahun', id_penerbit='$idpenerbit', id_pengarang='$idpengarang', id_katalog='$idkatalog', qty_stok='$quantity', harga_pinjam='$hargapinjam' WHERE isbn = '$kodebuku'";
+		function updateProducts($id_product, $nama_product, $id_supplier, $price, $quantity, $id_category) {
+			$query = "UPDATE products SET id_product='$id_product', nama_product='$nama_product', id_supplier='$id_supplier', price='$price', quantity='$quantity', id_category='$id_category' WHERE id_product='$id_product'";
 			
 			return $this->execute($query);
 		}
